@@ -39,7 +39,8 @@ public class PlayerMovement : MonoBehaviour
     public bool isGrounded;
     public bool isAirborne;
     public float currentSpeed;
-   
+    public float bubbleFloat;
+
 
     void Awake() 
     {
@@ -105,11 +106,15 @@ public class PlayerMovement : MonoBehaviour
 
             rb.velocity += (airVelocity) * Time.deltaTime;
             isFacingRight = true;
-            
         }
-        #endregion  
 
-        jumpForceVector = new Vector2 (0f, jumpForce);
+        while (animator.GetBool("isBlocking"))
+        {
+            rb.AddForce(new Vector2(0f, bubbleFloat));
+        }
+    #endregion
+
+    jumpForceVector = new Vector2 (0f, jumpForce);
         
         #region Jump
         if (Input.GetButtonDown("Jump") && jumpCount < jumpMax)
