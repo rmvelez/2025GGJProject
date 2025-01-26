@@ -27,12 +27,16 @@ public class PlayerMovement : MonoBehaviour
         get {return speed;}
         private set {speed = value;}
     }
-    public float Health {get; set;}
-    public float Damage {get; set;}
-    public float JumpForce; 
 
-    float Health = 100;
-    float Damage = 2;
+ [SerializeField] private int health = 100; 
+    
+    public int Health 
+    {
+        get {return health;}
+        private set {health = value;}
+    }
+    public int Damage {get; set;}
+    public float JumpForce; 
 
   //  {
     //    get {return jumpForce;}
@@ -69,9 +73,9 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = new Quaternion(transform.rotation.x, 230f, transform.rotation.z, transform.rotation.w);
         }
 
-        if (isGrounded) {
-             StartCoroutine(ResetJump());
-        }
+        //if (isGrounded) {
+         //    StartCoroutine(ResetJump());
+       // }
 
         velocity = new Vector3 (speed, 0, 0);
         
@@ -92,6 +96,14 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
+    public void subtractHealth(int Damage) {
+        health-=Damage;
+
+
+
+    }
+
+}
 
         //currentSpeed = Input.GetAxisRaw("Horizontal");
 
