@@ -29,14 +29,15 @@ public class PlayerMovement : MonoBehaviour
     }
     public float Health {get; set;}
     public float Damage {get; set;}
-    public float JumpForce 
+    public float JumpForce; 
 
     float Health = 100;
-    float Damage = 2
-    {
-        get {return jumpForce;}
-        private set {jumpForce = value;}
-    }
+    float Damage = 2;
+
+  //  {
+    //    get {return jumpForce;}
+    //    private set {jumpForce = value;}
+    //}
 
     public bool isFacingRight = true;
     public bool isGrounded;
@@ -90,16 +91,18 @@ public class PlayerMovement : MonoBehaviour
             isFacingRight = true;
         }
 
-        currentSpeed = Input.GetAxisRaw("Horizontal");
+    }
 
-        animator.SetFloat("Run", Mathf.Abs(currentSpeed));
+        //currentSpeed = Input.GetAxisRaw("Horizontal");
+
+       // animator.SetFloat("Run", Mathf.Abs(currentSpeed));
 
         #endregion
 
 
-        airVelocity = new Vector2(speed / 2, 0);
+      //  airVelocity = new Vector2(speed / 2, 0);
 
-        #region AirborneMovement
+        //#region AirborneMovement
 /*
         //Airborne, No block
         if (isAirborne && Input.GetAxisRaw("Horizontal") < 0f && !animator.GetBool("isBlocking")) {
