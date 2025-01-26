@@ -5,11 +5,18 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - +Health
+  - +Z
+  - Projectile
+  - Block
+  - Attack
+  - Shoot
+  - Catch
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - 

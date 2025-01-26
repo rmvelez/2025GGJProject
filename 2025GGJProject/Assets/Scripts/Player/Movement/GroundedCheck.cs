@@ -7,16 +7,16 @@ public class GroundedCheck : MonoBehaviour
 {
     public PlayerMovement movement;
 
-    void OnTriggerEnter2D(Collider2D ground) {
+    void OnTriggerEnter(Collider ground) {
 
-        if (ground.gameObject.tag == "Ground") {
+        if (ground.gameObject.CompareTag("Ground")) {
             movement.isGrounded = true;
             movement.isAirborne = false;
         }
     }
 
-    void OnTriggerExit2D(Collider2D ground) {
-        if (ground.gameObject.tag == "Ground") {
+    void OnTriggerExit(Collider ground) {
+        if (ground.gameObject.CompareTag("Ground")) {
             movement.isGrounded = false;
             movement.isAirborne = true;
         }

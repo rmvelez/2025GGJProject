@@ -5,8 +5,11 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Ortiz.unity
+    guid: 0edc31f57284fcb4ab0197e95445c612
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: cc8cab94a69042b4ba2e9f7a01e757e1, type: 3}
